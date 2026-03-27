@@ -1,6 +1,6 @@
 package com.app.util;
 import java.sql.*;
-
+#data
 public class DBConnection {
     public static Connection getConnection() throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
