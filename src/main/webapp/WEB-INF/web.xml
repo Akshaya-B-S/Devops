@@ -1,0 +1,13 @@
+<web-app>
+
+    <servlet>
+        <servlet-name>SaveDrawingServlet</servlet-name>
+        <servlet-class>com.app.servlet.SaveDrawingServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SaveDrawingServlet</servlet-name>
+        <url-pattern>/save</url-pattern>
+    </servlet-mapping>
+
+</web-app>
