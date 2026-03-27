@@ -1,13 +1,23 @@
 <web-app>
 
     <servlet>
-        <servlet-name>SaveDrawingServlet</servlet-name>
-        <servlet-class>com.app.servlet.SaveDrawingServlet</servlet-class>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.whiteboard.LoginServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>SaveDrawingServlet</servlet-name>
-        <url-pattern>/save</url-pattern>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.whiteboard.RegisterServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
     </servlet-mapping>
 
 </web-app>
