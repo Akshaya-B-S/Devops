@@ -15,6 +15,6 @@ public class SaveDrawingServlet extends HttpServlet {
 
         DrawingDAO.save(data);
 
-        res.getWriter().write("Saved");
+        res.getWriter().write("Saved Successfully");
     }
 }
