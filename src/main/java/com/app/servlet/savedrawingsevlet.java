@@ -1,19 +1,28 @@
 package com.app.servlet;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
 import java.io.*;
-import com.app.dao.DrawingDAO;
 
-public class SaveDrawingServlet extends HttpServlet {
+import com.app.dao.drawingdao;
 
-    protected void doPost(HttpServletRequest req, HttpServletResponse res)
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.WebServlet;
+
+@WebServlet("/saveDrawing")
+public class savedrawingsevlet extends HttpServlet {
+
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
 
         BufferedReader reader = req.getReader();
         String data = reader.readLine();
 
-        DrawingDAO.save(data);
+        drawingdao.save(data);
 
         res.getWriter().write("Saved");
     }

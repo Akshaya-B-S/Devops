@@ -1,10 +1,14 @@
 package com.whiteboard;
 
 import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import java.sql.*;
 
-public class LoginServlet extends HttpServlet {
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.WebServlet;
+
+@WebServlet("/login")
+public class loginservlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
@@ -12,10 +16,26 @@ public class LoginServlet extends HttpServlet {
         String user = req.getParameter("username");
         String pass = req.getParameter("password");
 
-        if(user.equals("admin") && pass.equals("123")) {
-            res.sendRedirect("dashboard.jsp");
-        } else {
-            res.getWriter().println("Invalid Login");
+        try {
+            Connection con = DBConnection.getConnection();
+
+            PreparedStatement ps = con.prepareStatement(
+                "SELECT * FROM users WHERE username=? AND password=?"
+            );
+
+            ps.setString(1, user);
+            ps.setString(2, pass);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                res.sendRedirect("dashboard.jsp");
+            } else {
+                res.getWriter().println("Invalid Login");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
