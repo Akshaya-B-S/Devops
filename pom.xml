@@ -13,14 +13,21 @@
         <sonar.login>sqp_03dd58beb671c2ff94effe7c2fc2ce7d9fb48c6c</sonar.login>
     </properties>
 
+    <!-- MySQL -->
+    <project>
+    ...
+    
     <dependencies>
-        <!-- Servlet -->
+
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.1</version>
-            <scope>provided</scope>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.3.0</version>
         </dependency>
+
+    </dependencies>
+
+</project>
 
         <!-- MySQL -->
         <dependency>
