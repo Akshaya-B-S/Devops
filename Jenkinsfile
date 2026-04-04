@@ -3,21 +3,9 @@ pipeline {
 
     stages {
 
-        stage('Clone') {
-            steps {
-                git 'https://github.com/your-repo.git'
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'mvn clean package'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh 'mvn test'
             }
         }
 
