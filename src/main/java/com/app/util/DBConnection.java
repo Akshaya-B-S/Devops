@@ -1,13 +1,26 @@
-package com.app.util;
-import java.sql.*;
+package com.whiteboard;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class DBConnection {
-    public static Connection getConnection() throws Exception {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        return DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/whiteboard",
-            "root",
-            "password"
-        );
+
+    public static Connection getConnection() {
+        Connection con = null;
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            con = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/whiteboard_db",
+                "root",
+                "password"   // 🔴 change your password
+            );
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return con;
     }
 }
