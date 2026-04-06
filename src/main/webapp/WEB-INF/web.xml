@@ -1,23 +1,23 @@
 <web-app>
 
     <servlet>
-        <servlet-name>LoginServlet</servlet-name>
+        <servlet-name>loginservlet</servlet-name>
         <servlet-class>com.whiteboard.LoginServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
+        <servlet-name>loginservlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-name>registerservlet</servlet-name>
         <servlet-class>com.whiteboard.RegisterServlet</servlet-class>
     </servlet>
 
-    <servlet-mapping>
-        <servlet-name>RegisterServlet</servlet-name>
-        <url-pattern>/register</url-pattern>
-    </servlet-mapping>
+   # <servlet-mapping>
+    //   <servlet-name>registerservlet</servlet-name>
+    
+    // </servlet-mapping>
 
 </web-app>
