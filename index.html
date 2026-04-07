@@ -1,17 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Whiteboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Pro Dashboard & Whiteboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">DevOps Lab</div>
+            <ul>
+                <li class="active"><i class="fas fa-home"></i> Home</li>
+                <li id="open-whiteboard"><i class="fas fa-chalkboard"></i> Create Whiteboard</li>
+                <li><i class="fas fa-project-diagram"></i> Projects</li>
+                <li><i class="fas fa-cog"></i> Settings</li>
+            </ul>
+        </nav>
 
-<h2>Whiteboard</h2>
+        <main class="content">
+            <header>
+                <h1>Welcome, Akshaya</h1>
+                <div class="user-profile">8.5 CGPA Status</div>
+            </header>
 
-<canvas id="board" width="800" height="500" style="border:1px solid black;"></canvas>
-<br>
-<button onclick="clearBoard()">Clear</button>
-<button onclick="saveDrawing()">Save</button>
+            <div class="dashboard-grid">
+                <div class="card"><h3>Active Tasks</h3><p>5</p></div>
+                <div class="card"><h3>Completed</h3><p>12</p></div>
+                <div class="card"><h3>Pipeline Health</h3><p>98%</p></div>
+            </div>
 
-<script src="script.js"></script>
+            <div id="whiteboard-container" class="hidden">
+                <div class="toolbar">
+                    <button id="clear"><i class="fas fa-trash"></i> Erase All</button>
+                    <input type="color" id="color-picker" value="#000000">
+                    <input type="range" id="brush-size" min="1" max="20" value="5">
+                    
+                    <select id="shape-tool">
+                        <option value="brush">Brush</option>
+                        <option value="rect">Rectangle</option>
+                        <option value="circle">Circle</option>
+                    </select>
+                    
+                    <button id="add-text"><i class="fas fa-font"></i> Text</button>
+                    <button id="add-table"><i class="fas fa-table"></i> Table</button>
+                    <button id="close-whiteboard" class="btn-danger">Exit</button>
+                </div>
+                <canvas id="whiteboard"></canvas>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
